@@ -1,7 +1,10 @@
 import fire
 
-def run():
-  print("Hello world!")
+def scrape():
+    """
+    Scrape a URL and clean its content for analyzing with an LLM.
+    """
+    print('Hello world!')
 
 if __name__ == '__main__':
-  fire.Fire(run)
+    fire.Fire({'scrape': scrape})
