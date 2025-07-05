@@ -1,27 +1,15 @@
 import inspect
 import sys
 
-import duckdb
 import fire
-import httpx
 
 from app.config import get_config
-from app.pages import DuckDbPageRepository
-from app.scraping import HttpxPageFetcher
 
 def scrape():
     """
     Scrape a URL and clean its content for analyzing with an LLM.
     """
-    client = httpx.Client()
-    fetcher = HttpxPageFetcher(client)
-    response = fetcher.fetch_page('https://news.ycombinator.com/')
-    print(f'{response!r}')
-
-def test():
-    config = get_config()
-    connection = duckdb.connect(f'{config.APP_DATA_DIRECTORY}/{config.PAGES_REPOSITORY_FILE}')
-    repository = DuckDbPageRepository(connection)
+    print('TODO!')
 
 if __name__ == '__main__':
     get_config()
