@@ -13,13 +13,13 @@ class HttpxPageFetcher(PageFetcher):
     """
 
     def __init__(self, client: httpx.Client):
-        self.client = client
+        self._client = client
 
     def fetch_page(self, url: str) -> Optional[Page]:
         try:
             return Page(
                 url=url,
-                content=self.client.get(url).raise_for_status().text,
+                content=self._client.get(url).raise_for_status().text,
             )
         except httpx.HTTPError as e:
             return None

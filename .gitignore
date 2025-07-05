@@ -3,5 +3,8 @@
 /build/
 /dist/
 
+# Local data storage
+/data/
+
 # (!) Local modules get compiled into *.pyc files on first import. Don't store in git because they will be regenerated.
 __pycache__/
