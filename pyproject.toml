@@ -1,7 +1,7 @@
 [project]
-name = "vibely-news-scraper"
+name = "lobster-bot"
 version = "0.1.0"
-description = "Vibe-coded news and image scraper. LET'S GOOO!!"
+description = "Site scraper and aggregator finding the best local seafood available."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
