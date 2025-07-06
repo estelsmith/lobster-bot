@@ -17,7 +17,7 @@ class ReadableContainer:
             raise NotFoundException(f'Service "{name}" not registered')
         return self._values.get(name)
 
-    def get(self, name):
+    def get[T](self, name: T) -> type[T]:
         """
         Resolve a service definition and return it.
         """
