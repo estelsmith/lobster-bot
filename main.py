@@ -3,17 +3,26 @@ import sys
 
 import fire
 
-from app.config import get_config
+from app.config import get_container
+from app.scraping.fetcher import CachedPageFetcher
+from app.scraping.scraper import OpenAIScraper
 
-def scrape():
+container = get_container()
+
+def scrape(url: str):
     """
     Scrape a URL and clean its content for analyzing with an LLM.
     """
-    print('TODO!')
+
+    page_fetcher = container.get(CachedPageFetcher)
+    openai_scraper = container.get(OpenAIScraper)
+
+    page = page_fetcher.fetch_page(url)
+    page_info = openai_scraper.scrape(page)
+    print(page_info)
+    pass
 
 if __name__ == '__main__':
-    get_config()
-
     # Available commands are every function defined in this particular module
     commands = [obj for i, obj in inspect.getmembers(sys.modules[__name__]) if inspect.isfunction(obj)]
 
