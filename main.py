@@ -22,7 +22,8 @@ def scrape(url: str):
 
     page = page_fetcher.fetch_page(url)
     page_info = openai_scraper.scrape(page)
-    print(page_info.model_dump_json(indent=4))
+    print(page_info)
+    # print(page_info.model_dump_json(indent=4))
     pass
 
 if __name__ == '__main__':
