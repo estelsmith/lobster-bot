@@ -2,7 +2,7 @@ import httpx
 
 from app.ioc import Container
 from app.pages import DuckDbPageRepository
-from app.scraping import HttpxPageFetcher
+from app.scraping.fetcher import HttpxPageFetcher
 from app.scraping.fetcher.CachedPageFetcher import CachedPageFetcher
 
 def register_provider(container: Container):

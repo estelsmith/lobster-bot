@@ -1,7 +1,7 @@
 from typing import Optional
 
 from app.pages import Page, PageRepository
-from app.scraping import PageFetcher
+from app.scraping.fetcher import PageFetcher
 
 class CachedPageFetcher(PageFetcher):
     def __init__(self, repository: PageRepository, wrapped: PageFetcher):
