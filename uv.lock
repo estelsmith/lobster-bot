@@ -201,6 +201,7 @@ dependencies = [
     { name = "html-to-markdown" },
     { name = "httpx" },
     { name = "openai" },
+    { name = "pydantic" },
     { name = "pyinstaller" },
     { name = "python-dotenv" },
 ]
@@ -212,6 +213,7 @@ requires-dist = [
     { name = "html-to-markdown", specifier = "~=1.4.0" },
     { name = "httpx", specifier = "~=0.28.1" },
     { name = "openai", specifier = "~=1.93.0" },
+    { name = "pydantic", specifier = "~=2.11.7" },
     { name = "pyinstaller", specifier = "~=6.14.2" },
     { name = "python-dotenv", specifier = "~=1.1.1" },
 ]

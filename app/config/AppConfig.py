@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 import os
+from typing import Optional
 
 @dataclass
 class AppConfig:
@@ -11,13 +12,15 @@ class AppConfig:
     PAGES_REPOSITORY_FILE: str = 'pages.db'
     """File where cached pages will be stored."""
 
-    OPENAI_COMPLETIONS_ENDPOINT: str = 'http://localhost:11434/v1/chat/completions'
+    OPENAI_BASE_URL: str = 'http://localhost:11434/v1'
     """
-    URL to an OpenAI-compatible Chat Completions endpoint
+    Base URL for OpenAI-compatible API.
 
     Defaults to local Ollama endpoint.
     @see https://ollama.com/blog/openai-compatibility
     """
+
+    OPENAI_API_KEY: Optional[str] = None
 
     OPENAI_MODEL: str = 'gemma3:27b'
     """
