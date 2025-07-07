@@ -5,4 +5,3 @@ import app.scraping.scraper.di
 def register_provider(container: Container):
     app.scraping.fetcher.di.register_provider(container)
     app.scraping.scraper.di.register_provider(container)
-    pass
