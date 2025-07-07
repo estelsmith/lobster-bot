@@ -1,4 +1,5 @@
 import inspect
+import json
 import sys
 
 import fire
@@ -12,6 +13,8 @@ container = get_container()
 def scrape(url: str):
     """
     Scrape a URL and clean its content for analyzing with an LLM.
+
+    Example: python main.py scrape 'https://www.thelobsterguy.com/134to2pounlo.html'
     """
 
     page_fetcher = container.get(CachedPageFetcher)
@@ -19,7 +22,7 @@ def scrape(url: str):
 
     page = page_fetcher.fetch_page(url)
     page_info = openai_scraper.scrape(page)
-    print(page_info)
+    print(page_info.model_dump_json(indent=4))
     pass
 
 if __name__ == '__main__':

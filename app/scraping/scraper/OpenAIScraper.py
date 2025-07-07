@@ -1,5 +1,3 @@
-from typing import Optional
-
 from openai import OpenAI
 from openai.types.chat import ParsedChatCompletion
 from pydantic import BaseModel
@@ -10,10 +8,15 @@ from app.scraping.scraper.PageScraper import PageScraper
 class PageInfo(BaseModel):
     page_title: str
     name_of_product: str
-    current_price: str
-    sale_price: Optional[str]
-    description: str
-    shipping_info: str
+    all_prices: list[str]
+    """A list of all product prices shown on the page."""
+    product_description: str
+    frequently_asked_questions: list[str]
+    """A list of frequently asked questions regarding the product."""
+    shipping_information: str
+    """Any shipping information provided for the product."""
+    reviews: list[str]
+    """A list of reviews left by users, if any."""
     pass
 
 class OpenAIScraper(PageScraper):
@@ -25,6 +28,9 @@ class OpenAIScraper(PageScraper):
         prompt = """
         Review the HTML of the page given in the `user` message. Extract information matching the given schema to the best
         of your ability.
+        
+        Only extract information that is readily available from the HTML. Do not come up with information in order to match
+        the schema.
         """
 
         messages = [
