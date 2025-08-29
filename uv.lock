@@ -200,6 +200,7 @@ dependencies = [
     { name = "fire" },
     { name = "html-to-markdown" },
     { name = "httpx" },
+    { name = "ollama" },
     { name = "openai" },
     { name = "pydantic" },
     { name = "pyinstaller" },
@@ -212,6 +213,7 @@ requires-dist = [
     { name = "fire", specifier = "~=0.7.0" },
     { name = "html-to-markdown", specifier = "~=1.4.0" },
     { name = "httpx", specifier = "~=0.28.1" },
+    { name = "ollama", specifier = "~=0.5.1" },
     { name = "openai", specifier = "~=1.93.0" },
     { name = "pydantic", specifier = "~=2.11.7" },
     { name = "pyinstaller", specifier = "~=6.14.2" },
@@ -228,6 +230,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/95/ee/af1a3842bdd5902ce133bd246eb7ffd4375c38642aeb5dc0ae3a0329dfa2/macholib-1.16.3.tar.gz", hash = "sha256:07ae9e15e8e4cd9a788013d81f5908b3609aa76f9b1421bae9c4d7606ec86a30", size = 59309, upload-time = "2023-09-25T09:10:16.155Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/d1/5d/c059c180c84f7962db0aeae7c3b9303ed1d73d76f2bfbc32bc231c8be314/macholib-1.16.3-py2.py3-none-any.whl", hash = "sha256:0e315d7583d38b8c77e815b1ecbdbf504a8258d8b3e17b61165c6feb60d18f2c", size = 38094, upload-time = "2023-09-25T09:10:14.188Z" },
+]
+
+[[package]]
+name = "ollama"
+version = "0.5.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "httpx" },
+    { name = "pydantic" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/8d/96/c7fe0d2d1b3053be614822a7b722c7465161b3672ce90df71515137580a0/ollama-0.5.1.tar.gz", hash = "sha256:5a799e4dc4e7af638b11e3ae588ab17623ee019e496caaf4323efbaa8feeff93", size = 41112, upload-time = "2025-05-30T21:32:48.679Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d6/76/3f96c8cdbf3955d7a73ee94ce3e0db0755d6de1e0098a70275940d1aff2f/ollama-0.5.1-py3-none-any.whl", hash = "sha256:4c8839f35bc173c7057b1eb2cbe7f498c1a7e134eafc9192824c8aecb3617506", size = 13369, upload-time = "2025-05-30T21:32:47.429Z" },
 ]
 
 [[package]]
